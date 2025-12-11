@@ -5,23 +5,19 @@ namespace Tyuiu.NazarovSV.Sprint6.Task3.V3.Lib
     {
         public int[,] Calculate(int[,] matrix)
         {
-            int rows = matrix.GetUpperBound(0) + 1;
-            int columns = matrix.Length / rows;
-            for (int i = 0; i < rows - 1; i++)
+            int[,] matrixFunc = new int[5, 5];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                int minIn = i;
-                for (int j = i; j < rows; j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    if (matrix[j, 5] < matrix[minIn, 5])
+                    matrixFunc[i, j] = matrix[i, j];
+                    if (matrixFunc[1, j] % 2 == 0)
                     {
-                        minIn = j;
+                        matrixFunc[1, j] = 0;
                     }
                 }
-                int temp = matrix[i, 5];
-                matrix[i, 5] = matrix[minIn, 5];
-                matrix[minIn, 5] = temp;
             }
-            return matrix;
+            return matrixFunc;
         }
     }
 }
