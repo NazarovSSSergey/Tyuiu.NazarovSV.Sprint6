@@ -1,4 +1,5 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint6;
+
 namespace Tyuiu.NazarovSV.Sprint6.Task1.V24.Lib
 {
     public class Class1 : ISprint6Task1V24
@@ -11,13 +12,14 @@ namespace Tyuiu.NazarovSV.Sprint6.Task1.V24.Lib
             int Index = 0;
             for (int i = startValue; i <= stopValue; i++)
             {
-                if ((i + 1.7) == 0)
+                if (Math.Abs(i + 1.7) < 1e-10) 
                 {
-                    ArrayFunc[Index] = 0;
+                    ArrayFunc[Index] = double.NaN;
                 }
                 else
                 {
-                    double res = (Math.Sin(i) / i + 1.7) - Math.Cos(i) * 4 * i - 6;
+
+                    double res = (Math.Sin(i) / (i + 1.7)) - Math.Cos(i) * 4 * i - 6;
                     ArrayFunc[Index] = Math.Round(res, 2);
                 }
                 Index++;
