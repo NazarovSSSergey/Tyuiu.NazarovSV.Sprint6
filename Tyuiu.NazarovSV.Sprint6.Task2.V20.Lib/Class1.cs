@@ -11,15 +11,17 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib
             valueArray = new double[len];
             double y;
             int c = 0;
+
             for (int x = startValue; x <= stopValue; x++)
             {
-                y = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
-                if (x + 1.2 == 0)
+                
+                if (x == 0)
                 {
-                    valueArray[c] = 0;
+                    valueArray[c] = 0; 
                 }
                 else
                 {
+                    y = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
                     valueArray[c] = Math.Round(y, 2);
                 }
                 c++;
