@@ -18,14 +18,16 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20
         }
         private void buttonFuncStart_AY_Click(object sender, EventArgs e)
         {
-            Class1 ds = new Class1();
+            Class1 dataService = new Class1();
             try
             {
                 int StartValue = -5;
                 int StopValue = 5;
-                int len = ds.GetMassFunction(StartValue, StopValue).Length;
+                int len = dataService.GetMassFunction(StartValue, StopValue).Length;
+
                 double[] ArrayFunc = new double[len];
-                ArrayFunc = ds.GetMassFunction(StartValue, StopValue);
+                ArrayFunc = dataService.GetMassFunction(StartValue, StopValue);
+
                 for (int i = 0; i < len; i++)
                 {
                     this.dataGridView1.Rows.Add(Convert.ToString(StartValue), Convert.ToString(ArrayFunc[i]));
@@ -34,9 +36,10 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Îøèáêà:{ex}");
+                MessageBox.Show($"Îøèáêà: {ex}");
             }
         }
+
         private void groupBoxInfo_AY_Enter(object sender, EventArgs e)
         {
 

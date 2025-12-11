@@ -7,10 +7,10 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Test
         [TestMethod]
         public void TestMethod1()
         {
-            DataService dataService = new DataService();
+            Class1 ds = new Class1();
             int start = -5;
             int end = 5;
-            double[] res = dataService.GetMassFunction(start, end);
+            double[] res = ds.GetMassFunction(start, end);
             Console.WriteLine(res);
         }
     }
