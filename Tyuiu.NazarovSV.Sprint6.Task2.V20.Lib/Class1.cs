@@ -9,13 +9,20 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib
             double[] valueArray;
             int len = (stopValue - startValue) + 1;
             valueArray = new double[len];
-            double res;
-            int count = 0;
+            double y;
+            int c = 0;
             for (int x = startValue; x <= stopValue; x++)
             {
-                res = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
-                valueArray[count] = res;
-                count++;
+                y = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
+                if (x + 1.2 == 0)
+                {
+                    valueArray[c] = 0;
+                }
+                else
+                {
+                    valueArray[c] = Math.Round(y, 2);
+                }
+                c++;
             }
             return valueArray;
         }
