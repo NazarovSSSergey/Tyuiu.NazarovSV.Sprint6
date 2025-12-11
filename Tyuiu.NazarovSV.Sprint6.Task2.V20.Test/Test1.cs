@@ -1,4 +1,4 @@
-﻿using Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib;
+﻿using Tyuiu.NazarovSV.Sprint6.Task1.V24.Lib;
 namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Test
 {
     [TestClass]
