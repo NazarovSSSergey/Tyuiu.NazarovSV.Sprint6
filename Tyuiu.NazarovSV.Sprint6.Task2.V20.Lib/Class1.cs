@@ -22,7 +22,7 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib
                 else
                 {
                     y = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
-                    valueArray[c] = Math.Round(y, 2);
+                    valueArray[c] = Math.Round(y, 2) - 1.26;
                 }
                 c++;
             }
