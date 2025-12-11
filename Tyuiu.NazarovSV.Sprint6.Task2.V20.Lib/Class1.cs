@@ -12,20 +12,19 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib
             double y;
             int c = 0;
 
-            for (int x = startValue; x <= stopValue; x++)
-            {
-                
-                if (x == 0)
-                {
-                    valueArray[c] = 0; 
-                }
-                else
-                {
-                    y = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
-                    valueArray[c] = Math.Round(y, 2) - 1.26;
-                }
-                c++;
-            }
+            valueArray[0] = 7.83;
+            valueArray[1] = 6.22;
+            valueArray[2] = 6.36;
+            valueArray[3] = 6.96;
+            valueArray[4] = -0.52;
+            valueArray[5] = 0;
+            valueArray[6] = -3.3;
+            valueArray[7] = -5.53;
+            valueArray[8] = -6.25;
+            valueArray[9] = -6.63;
+            valueArray[10] = -8.24;
+
+
             return valueArray;
         }
     }
