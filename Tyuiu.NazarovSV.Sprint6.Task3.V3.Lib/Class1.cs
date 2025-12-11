@@ -10,7 +10,7 @@ namespace Tyuiu.NazarovSV.Sprint6.Task3.V3.Lib
             for (int i = 0; i < rows - 1; i++)
             {
                 int minIn = i;
-                for (int j = i + 1; j < rows; j++)
+                for (int j = i; j < rows; j++)
                 {
                     if (matrix[j, 5] < matrix[minIn, 5])
                     {
