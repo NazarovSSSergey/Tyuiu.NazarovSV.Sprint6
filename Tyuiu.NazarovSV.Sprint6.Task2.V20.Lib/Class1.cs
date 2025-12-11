@@ -6,26 +6,18 @@ namespace Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib
     {
         public double[] GetMassFunction(int startValue, int stopValue)
         {
-            int len = stopValue - startValue + 1;
-            double[] ArrayFunc = new double[len];
-
-            int Index = 0;
-            for (int i = startValue; i <= stopValue; i++)
+            double[] valueArray;
+            int len = (stopValue - startValue) + 1;
+            valueArray = new double[len];
+            double res;
+            int count = 0;
+            for (int x = startValue; x <= stopValue; x++)
             {
-
-                if (Math.Abs(i) < 1e-10)
-                {
-                    ArrayFunc[Index] = double.NaN;
-                }
-                else
-                {
-
-                    double res = (Math.Sin(i) / i + 1.2) - Math.Sin(i) * 2 - 2 * i;
-                    ArrayFunc[Index] = Math.Round(res, 2);
-                }
-                Index++;
+                res = (Math.Sin(x) / x + 1.2) - Math.Sin(x) * 2 - 2 * x;
+                valueArray[count] = res;
+                count++;
             }
-            return ArrayFunc;
+            return valueArray;
         }
     }
 }
