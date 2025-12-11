@@ -1,6 +1,10 @@
-﻿namespace Tyuiu.NazarovSV.Sprint6.Task0.V4
+﻿using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace Tyuiu.NazarovSV.Sprint6.Task0.V4
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,96 +32,169 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
-        }
-
-        #endregion
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            groupBoxInfo_AY = new GroupBox();
-            labelImage_AY = new Label();
-            labelInfo_AY = new Label();
-            labelAnswer_AY = new Label();
-            textBoxAnswer_AY = new TextBox();
-            groupBoxInfo_AY.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            pictureBoxFormula = new PictureBox();
+            labelVarX = new Label();
+            textBoxVarX = new TextBox();
+            labelResult = new Label();
+            textBoxResult = new TextBox();
+            buttonDone = new Button();
+            textBoxTask = new TextBox();
+            groupBoxTask = new GroupBox();
+            buttonHelp = new Button();
+            groupBoxInput = new GroupBox();
+            groupBox1 = new GroupBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFormula).BeginInit();
+            groupBoxTask.SuspendLayout();
+            groupBoxInput.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBoxInfo_AY
+            // pictureBoxFormula
             // 
-            groupBoxInfo_AY.Controls.Add(labelImage_AY);
-            groupBoxInfo_AY.Controls.Add(labelInfo_AY);
-            groupBoxInfo_AY.Location = new Point(12, 12);
-            groupBoxInfo_AY.Name = "groupBoxInfo_AY";
-            groupBoxInfo_AY.Size = new Size(776, 319);
-            groupBoxInfo_AY.TabIndex = 0;
-            groupBoxInfo_AY.TabStop = false;
-            groupBoxInfo_AY.Enter += groupBoxInfo_AY_Enter;
+            pictureBoxFormula.Image = (Image)resources.GetObject("pictureBoxFormula.Image");
+            pictureBoxFormula.Location = new Point(552, 22);
+            pictureBoxFormula.Name = "pictureBoxFormula";
+            pictureBoxFormula.Size = new Size(218, 40);
+            pictureBoxFormula.TabIndex = 2;
+            pictureBoxFormula.TabStop = false;
             // 
-            // labelImage_AY
+            // labelVarX
             // 
-            labelImage_AY.Image = Properties.Resources.Screenshot_1;
-            labelImage_AY.Location = new Point(255, 172);
-            labelImage_AY.Name = "labelImage_AY";
-            labelImage_AY.Size = new Size(515, 128);
-            labelImage_AY.TabIndex = 1;
+            labelVarX.AutoSize = true;
+            labelVarX.Location = new Point(6, 47);
+            labelVarX.Name = "labelVarX";
+            labelVarX.Size = new Size(86, 15);
+            labelVarX.TabIndex = 5;
+            labelVarX.Text = "Переменная X";
             // 
-            // labelInfo_AY
+            // textBoxVarX
             // 
-            labelInfo_AY.AutoSize = true;
-            labelInfo_AY.BackColor = SystemColors.ActiveBorder;
-            labelInfo_AY.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelInfo_AY.Location = new Point(20, 31);
-            labelInfo_AY.Name = "labelInfo_AY";
-            labelInfo_AY.Size = new Size(414, 60);
-            labelInfo_AY.TabIndex = 0;
-            labelInfo_AY.Text = "Условие:\r\nВычислить значние выражения при x = 3\r\n";
-            labelInfo_AY.Click += labelInfo_AY_Click;
+            textBoxVarX.Location = new Point(6, 65);
+            textBoxVarX.MaxLength = 10;
+            textBoxVarX.Name = "textBoxVarX";
+            textBoxVarX.Size = new Size(100, 23);
+            textBoxVarX.TabIndex = 6;
+            textBoxVarX.KeyPress += textBoxVarX_KeyPress;
             // 
-            // labelAnswer_AY
+            // labelResult
             // 
-            labelAnswer_AY.AutoSize = true;
-            labelAnswer_AY.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelAnswer_AY.Location = new Point(12, 379);
-            labelAnswer_AY.Name = "labelAnswer_AY";
-            labelAnswer_AY.Size = new Size(78, 32);
-            labelAnswer_AY.TabIndex = 1;
-            labelAnswer_AY.Text = "Ответ";
+            labelResult.AutoSize = true;
+            labelResult.Location = new Point(6, 22);
+            labelResult.Name = "labelResult";
+            labelResult.Size = new Size(60, 15);
+            labelResult.TabIndex = 7;
+            labelResult.Text = "Результат";
             // 
-            // textBoxAnswer_AY
+            // textBoxResult
             // 
-            textBoxAnswer_AY.Location = new Point(109, 388);
-            textBoxAnswer_AY.Name = "textBoxAnswer_AY";
-            textBoxAnswer_AY.Size = new Size(134, 23);
-            textBoxAnswer_AY.TabIndex = 2;
-            textBoxAnswer_AY.TextChanged += textBoxAnswer_AY_TextChanged;
+            textBoxResult.Location = new Point(6, 40);
+            textBoxResult.Name = "textBoxResult";
+            textBoxResult.ReadOnly = true;
+            textBoxResult.Size = new Size(100, 23);
+            textBoxResult.TabIndex = 8;
+            textBoxResult.TabStop = false;
             // 
-            // Form1
+            // buttonDone
+            // 
+            buttonDone.Location = new Point(630, 393);
+            buttonDone.Name = "buttonDone";
+            buttonDone.Size = new Size(158, 45);
+            buttonDone.TabIndex = 9;
+            buttonDone.Text = "Выполнить";
+            buttonDone.UseVisualStyleBackColor = true;
+            buttonDone.Click += buttonDone_Click;
+            // 
+            // textBoxTask
+            // 
+            textBoxTask.Location = new Point(6, 22);
+            textBoxTask.Multiline = true;
+            textBoxTask.Name = "textBoxTask";
+            textBoxTask.ReadOnly = true;
+            textBoxTask.Size = new Size(478, 225);
+            textBoxTask.TabIndex = 10;
+            textBoxTask.Text = "Вычислить выражение по формуле";
+            // 
+            // groupBoxTask
+            // 
+            groupBoxTask.Controls.Add(textBoxTask);
+            groupBoxTask.Controls.Add(pictureBoxFormula);
+            groupBoxTask.Location = new Point(12, 12);
+            groupBoxTask.Name = "groupBoxTask";
+            groupBoxTask.Size = new Size(776, 277);
+            groupBoxTask.TabIndex = 11;
+            groupBoxTask.TabStop = false;
+            groupBoxTask.Text = "Условие";
+            // 
+            // buttonHelp
+            // 
+            buttonHelp.FlatStyle = FlatStyle.Flat;
+            buttonHelp.Location = new Point(570, 393);
+            buttonHelp.Name = "buttonHelp";
+            buttonHelp.Size = new Size(48, 45);
+            buttonHelp.TabIndex = 12;
+            buttonHelp.Text = "?";
+            buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
+            // 
+            // groupBoxInput
+            // 
+            groupBoxInput.Controls.Add(labelVarX);
+            groupBoxInput.Controls.Add(textBoxVarX);
+            groupBoxInput.Location = new Point(12, 298);
+            groupBoxInput.Name = "groupBoxInput";
+            groupBoxInput.Size = new Size(235, 140);
+            groupBoxInput.TabIndex = 13;
+            groupBoxInput.TabStop = false;
+            groupBoxInput.Text = "Ввод данных";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBoxResult);
+            groupBox1.Controls.Add(labelResult);
+            groupBox1.Location = new Point(658, 298);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(130, 79);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Вывод данных";
+            // 
+            // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBoxAnswer_AY);
-            Controls.Add(labelAnswer_AY);
-            Controls.Add(groupBoxInfo_AY);
-            Name = "Form1";
-            Text = "Form1";
-            groupBoxInfo_AY.ResumeLayout(false);
-            groupBoxInfo_AY.PerformLayout();
+            Controls.Add(groupBox1);
+            Controls.Add(groupBoxInput);
+            Controls.Add(buttonHelp);
+            Controls.Add(buttonDone);
+            Controls.Add(groupBoxTask);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Спринт #6 | Таск 0 | Вариант 22 | Выполнил: Никитин Р.Ю. | ИБКСб-25-1";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFormula).EndInit();
+            groupBoxTask.ResumeLayout(false);
+            groupBoxTask.PerformLayout();
+            groupBoxInput.ResumeLayout(false);
+            groupBoxInput.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
-        private GroupBox groupBoxInfo_AY;
-        private Label labelInfo_AY;
-        private Label labelImage_AY;
-        private Label labelAnswer_AY;
-        private TextBox textBoxAnswer_AY;
+        #endregion
+        private PictureBox pictureBoxFormula;
+        private Label labelVarX;
+        private TextBox textBoxVarX;
+        private Label labelResult;
+        private TextBox textBoxResult;
+        private Button buttonDone;
+        private TextBox textBoxTask;
+        private GroupBox groupBoxTask;
+        private Button buttonHelp;
+        private GroupBox groupBoxInput;
+        private GroupBox groupBox1;
     }
 }
