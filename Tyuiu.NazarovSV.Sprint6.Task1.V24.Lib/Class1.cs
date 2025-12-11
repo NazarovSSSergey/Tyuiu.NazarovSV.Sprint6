@@ -13,6 +13,7 @@ namespace Tyuiu.NazarovSV.Sprint6.Task1.V24.Lib
             for (int x = startValue; x <= stopValue; x++)
             {
                 y = ( Math.Sin(x) / x + 1.7 ) - Math.Cos(x) * 4 * x - 6;
+                y = Math.Round(y, 2);
                 if (x + 1.7 == 0)
                 {
                     valueArray[c] = 0;
