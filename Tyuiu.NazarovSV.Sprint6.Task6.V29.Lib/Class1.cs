@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using tyuiu.cources.programming.interfaces.Sprint6;;
+﻿using tyuiu.cources.programming.interfaces.Sprint6;
 
-namespace Tyuiu.NazarovSV.Sprint6.Task6.V28.Lib
+
+namespace Tyuiu.NazarovSV.Sprint6.Task6.V29.Lib
 {
-    public class DataService : ISprint6Task6V29
+    public class Class1 : ISprint6Task6V29
     {
         public string CollectTextFromFile(string path)
         {
