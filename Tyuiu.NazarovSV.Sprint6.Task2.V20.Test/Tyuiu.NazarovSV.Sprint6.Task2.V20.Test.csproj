@@ -13,6 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib\Tyuiu.NazarovSV.Sprint6.Task2.V20.Lib.csproj" />
   </ItemGroup>
 
